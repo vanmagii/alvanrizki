@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalender Zodiak</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #1d1f27, #2a2d3b);
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 255, 255, 0.1);
+      color: #00ffff;
+      padding: 20px;
+      box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.2);
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 900px;
+      text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.8);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 0;
+      color: #00ffff;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .zodiac {
+      margin: 20px auto;
+      max-width: 800px;
+      border: none;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.05);
+      box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.2);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .zodiac:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .zodiac-header {
+      background-color: #00ffff;
+      color: #1d1f27;
+      padding: 15px;
+      font-size: 1.8rem;
+      text-align: center;
+      border-bottom: 2px solid #ff00ff;
+      text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.8);
+    }
+
+    .zodiac-body {
+      padding: 20px;
+      display: none;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #8affff;
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      color: #00ffff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 20px;
+      box-shadow: 0 -4px 8px rgba(0, 255, 255, 0.2);
+    }
+
+    /* Add hover animations */
+    .zodiac:hover .zodiac-header {
+      color: #ff00ff;
+      text-shadow: 0px 0px 8px rgba(255, 0, 255, 0.8);
+    }
+
+    .zodiac-body {
+      transition: opacity 0.5s ease;
+    }
+
+    .zodiac:hover .zodiac-body {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kalender Zodiak</h1>
+  </header>
+  <main>
+    <h2>Informasi Zodiak</h2>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Aries (21 Maret - 19 April)</div>
+      <div class="zodiac-body">Aries digambarkan sebagai domba jantan yang berani dan kuat. Mereka adalah sosok yang energik dan penuh semangat, dengan jiwa kepemimpinan yang menonjol. Aries sering kali menjadi pelopor dalam berbagai hal, selalu siap mengambil risiko dan menghadapi tantangan. Mereka cenderung impulsif, sehingga kadang bertindak tanpa banyak berpikir. Didorong oleh planet Mars, Aries memiliki ambisi tinggi dan sifat kompetitif yang menjadikan mereka pejuang sejati.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Taurus (20 April - 20 Mei)</div>
+      <div class="zodiac-body">Taurus diwakili oleh banteng yang melambangkan keteguhan dan kekuatan. Mereka dikenal sebagai individu yang praktis, stabil, dan sangat gigih. Taurus memiliki cinta yang mendalam terhadap kenyamanan, keindahan, dan hal-hal material. Meski keras kepala, mereka juga sangat setia dan dapat diandalkan. Planet penguasanya, Venus, memberikan rasa artistik yang tajam serta cinta terhadap hal-hal romantis.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Gemini (21 Mei - 20 Juni)</div>
+      <div class="zodiac-body">Simbol si Kembar mencerminkan sifat Gemini yang penuh dualitas. Mereka adalah komunikator ulung, dengan rasa ingin tahu yang tinggi. Gemini suka menjelajahi ide-ide baru dan terlibat dalam percakapan intelektual. Namun, mereka juga bisa tidak konsisten dan mudah bosan. Mereka cenderung sangat sosial, ramah, dan adaptif, dipengaruhi oleh Merkurius, planet komunikasi.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Cancer (21 Juni - 22 Juli)</div>
+      <div class="zodiac-body">Cancer digambarkan sebagai kepiting, melambangkan perlindungan dan emosionalitas. Mereka sangat intuitif, peduli, dan memiliki ikatan yang kuat dengan keluarga. Cancer cenderung melindungi dirinya dengan "cangkang" emosional, tetapi sangat penyayang kepada orang yang dekat dengannya. Mereka dipandu oleh Bulan, yang memberikan sifat sensitif dan suasana hati yang sering berubah.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Leo (23 Juli - 22 Agustus)</div>
+      <div class="zodiac-body">Simbol singa melambangkan keberanian, kebanggaan, dan karisma yang melekat pada Leo. Mereka adalah pemimpin alami yang percaya diri, penuh semangat, dan suka menjadi pusat perhatian. Leo sering kali memiliki keinginan untuk menginspirasi orang lain dan dikenal sebagai pribadi yang murah hati. Dengan Matahari sebagai planet penguasanya, mereka memancarkan energi positif dan vitalitas yang kuat.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Virgo (23 Agustus - 22 September)</div>
+      <div class="zodiac-body">Virgo digambarkan sebagai gadis, simbol kesucian dan ketelitian. Mereka dikenal sebagai perfeksionis yang analitis dan sangat memperhatikan detail. Virgo adalah individu yang praktis, dengan rasa tanggung jawab yang tinggi, tetapi mereka cenderung terlalu kritis, baik kepada diri sendiri maupun orang lain. Dipandu oleh Merkurius, Virgo sangat terorganisasi dan suka membantu.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Libra (23 September - 22 Oktober)</div>
+      <div class="zodiac-body">Simbol timbangan mencerminkan keseimbangan, keadilan, dan harmoni, yang menjadi nilai utama Libra. Mereka adalah individu yang diplomatis, artistik, dan suka membangun hubungan harmonis. Libra sering ragu-ragu dalam mengambil keputusan karena selalu mempertimbangkan berbagai sisi. Dikuasai oleh Venus, mereka memiliki selera yang halus terhadap seni dan keindahan.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Scorpio (23 Oktober - 21 November)</div>
+      <div class="zodiac-body">
+        Scorpio dilambangkan dengan kalajengking, yang menggambarkan intensitas dan misteri. Mereka adalah individu yang sangat bersemangat, fokus, dan memiliki tekad yang kuat. Scorpio sering kali penuh rahasia dan mendalam, dengan kemampuan untuk membaca emosi orang lain. Planet penguasanya, Pluto, memberikan sifat transformasi dan kekuatan regenerasi.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Sagitarius (22 November - 21 Desember)</div>
+      <div class="zodiac-body">Sagitarius diwakili oleh pemanah, melambangkan kebebasan, petualangan, dan optimisme. Mereka adalah individu yang berpikir jauh ke depan, suka menjelajahi dunia, dan memiliki rasa ingin tahu terhadap filsafat. Sagittarius sangat jujur dan terbuka, meskipun kadang terlalu blak-blakan. Jupiter sebagai planet penguasanya membawa keberuntungan dan dorongan untuk terus belajar.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Capricorn (22 Desember - 19 Januari)</div>
+      <div class="zodiac-body">Capricorn digambarkan sebagai kambing gunung yang melambangkan ambisi dan ketekunan. Mereka adalah pekerja keras yang disiplin, dengan fokus pada pencapaian tujuan jangka panjang. Capricorn sering kali serius dan pragmatis, tetapi mereka juga memiliki sisi bijaksana. Saturnus, planet penguasanya, memberikan rasa tanggung jawab dan kemampuan mengatasi rintangan.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Aquarius (20 Januari - 18 Februari)</div>
+      <div class="zodiac-body">Simbol pembawa air melambangkan penyediaan wawasan dan kebijaksanaan bagi orang lain. Aquarius adalah individu yang inovatif, mandiri, dan berpikiran maju. Mereka cenderung eksentrik dan memiliki minat yang besar terhadap isu-isu sosial. Dikuasai oleh Uranus, Aquarius membawa revolusi dan ide-ide baru untuk memperbaiki dunia.</div>
+    </div>
+
+    <div class="zodiac" onclick="toggleZodiacDetails(this)">
+      <div class="zodiac-header">Pisces (19 Februari - 20 Maret)</div>
+      <div class="zodiac-body">Pisces diwakili oleh dua ikan yang berenang ke arah berlawanan, melambangkan dualitas antara dunia nyata dan dunia mimpi. Mereka adalah individu yang empatik, imajinatif, dan intuitif. Pisces sering kali terhubung dengan seni dan spiritualitas, tetapi mereka juga bisa melarikan diri dari kenyataan. Dipengaruhi oleh Neptunus, mereka cenderung hidup dalam dunia fantasi.</div>
+    </div>
+
+  </main>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.zodiac-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const body = this.nextElementSibling;
+        if (body.style.display === 'block') {
+          body.style.display = 'none';
+        } else {
+          body.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

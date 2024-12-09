@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Metode Numerik</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #1d1f27; /* Dark background */
+        color: #ffffff; /* Light text */
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #2a2d3b, #3b3f4c); /* Updated gradient */
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2); /* Teal shadow */
+      }
+      h1 {
+        color: #00ffff; /* Teal color */
+        border-bottom: 2px solid #00ffff;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+      }
+      h2 {
+        color: #8affff; /* Light teal */
+        border-bottom: 1px solid #8affff;
+        margin-top: 20px;
+        padding-bottom: 3px;
+      }
+      p, ul {
+        margin-bottom: 15px;
+        line-height: 1.8;
+        color: #d3d3d3; /* Light grey */
+      }
+      ul li {
+        margin-bottom: 5px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      strong {
+        color: #ffab40; /* Amber */
+      }
+      code {
+        background: #2c2c3d; /* Darker background */
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: #00ffff; /* Teal text */
+      }
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 15px;
+        }
+        h1 {
+          font-size: 1.8rem;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+        p, ul li {
+          font-size: 1rem;
+        }
+      }
+      /* Hover effects */
+      h1:hover, h2:hover {
+        text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.5); /* Teal glow */
+      }
+      ul li:hover {
+        color: #8affff; /* Light teal */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Metode Numerik</h1>
+      <p>
+        Metode numerik adalah teknik matematika yang digunakan untuk menyelesaikan masalah-masalah matematika yang sulit atau tidak dapat diselesaikan secara analitik. Dengan menggunakan metode ini, perhitungan dilakukan secara numerik dengan bantuan komputer.
+      </p>
+
+      <h2>Metode Integrasi</h2>
+      <p>
+        Metode integrasi numerik digunakan untuk menghitung luas di bawah kurva atau integral dari suatu fungsi ketika solusi analitik sulit diperoleh. Beberapa metode umum termasuk:
+        <ul>
+          <li>Metode Trapezoid</li>
+          <li>Metode Simpson</li>
+          <li>Metode Riemann</li>
+        </ul>
+      </p>
+
+      <h2>Metode Diferensial</h2>
+      <p>
+        Metode diferensial numerik digunakan untuk menghitung turunan atau menyelesaikan persamaan diferensial. Ini sangat berguna dalam berbagai aplikasi seperti dinamika fluida, fisika, dan astronomi. Contohnya meliputi:
+        <ul>
+          <li>Metode Euler</li>
+          <li>Metode Runge-Kutta</li>
+        </ul>
+      </p>
+
+      <h2>Metode Euler</h2>
+      <p>
+        Metode Euler adalah metode numerik yang digunakan untuk menyelesaikan persamaan diferensial biasa (ODE) dengan pendekatan langkah-langkah kecil. Ini adalah metode yang sangat sederhana dan berguna untuk memahami dasar-dasar pemecahan ODE secara numerik. Metode ini bekerja dengan menggunakan nilai awal dari fungsi dan menghitung nilai berikutnya dengan menggunakan rumus:
+      </p>
+      <p><strong>y<sub>n+1</sub> = y<sub>n</sub> + h * f(x<sub>n</sub>, y<sub>n</sub>)</strong></p>
+      <p>
+        Dimana:
+        <ul>
+          <li><strong>y<sub>n+1</sub></strong>: Nilai fungsi pada langkah berikutnya</li>
+          <li><strong>y<sub>n</sub></strong>: Nilai fungsi saat ini</li>
+          <li><strong>h</strong>: Panjang langkah (step size)</li>
+          <li><strong>f(x<sub>n</sub>, y<sub>n</sub>)</strong>: Fungsi turunan dari persamaan diferensial</li>
+        </ul>
+      </p>
+      <p>
+        Metode Euler sederhana tetapi memiliki keterbatasan dalam akurasi, terutama jika panjang langkah (h) terlalu besar. Untuk meningkatkan akurasi, metode yang lebih canggih seperti metode Runge-Kutta dapat digunakan.
+      </p>
+
+      <h2>Energi Radiasi</h2>
+      <p>
+        Energi radiasi mengacu pada energi yang dipancarkan dalam bentuk gelombang elektromagnetik. Salah satu hukum penting yang digunakan untuk menghitung energi radiasi adalah Hukum Stefan-Boltzmann, yang dinyatakan sebagai:
+      </p>
+      <p><strong>Q = σ A T<sup>4</sup></strong></p>
+      <p>Dimana:</p>
+      <ul>
+        <li><strong>Q</strong>: Energi radiasi (Watt)</li>
+        <li><strong>σ</strong>: Konstanta Stefan-Boltzmann (5.67 x 10<sup>-8</sup> W/m<sup>2</sup>K<sup>4</sup>)</li>
+        <li><strong>A</strong>: Luas permukaan (m<sup>2</sup>)</li>
+        <li><strong>T</strong>: Suhu absolut (Kelvin)</li>
+      </ul>
+
+      <h2>Transfer Panas</h2>
+      <p>
+        Transfer panas adalah proses perpindahan energi panas dari satu tempat ke tempat lain. Proses ini dapat terjadi melalui:
+        <ul>
+          <li><strong>Konduksi</strong>: Perpindahan panas melalui medium padat.</li>
+          <li><strong>Konveksi</strong>: Perpindahan panas melalui fluida (cairan atau gas).</li>
+          <li><strong>Radiasi</strong>: Perpindahan panas melalui gelombang elektromagnetik tanpa membutuhkan medium.</li>
+        </ul>
+      </p>
+    </div>
+  </body>
+</html>

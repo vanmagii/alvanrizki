@@ -1,0 +1,230 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #1d1f27, #2a2d3b);
+  font-family: 'Orbitron', Arial, sans-serif;
+  color: #ffffff;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.2);
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.site-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.5);
+  animation: fadeIn 1s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.site-avatar img:hover {
+  box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.7);
+  transform: scale(1.5) rotate(360deg);
+}
+
+.site-info {
+  margin-left: 1rem;
+}
+
+.site-name {
+  font-size: 2rem;
+  color: #00ffff;
+  font-weight: bold;
+  text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.8);
+}
+
+.site-description {
+  font-size: 1rem;
+  color: #8affff;
+  position: relative;
+  right: 18px;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #00ffff;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: #ff00ff;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00ffff;
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
+.intro p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #8affff;
+  margin-bottom: 1.5rem;
+}
+
+.intro img {
+  width: 50%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.5);
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.5s;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.intro img:hover {
+  transform: scale(1.2) rotate(20deg);
+}
+
+.news-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00ffff;
+  text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.8);
+}
+
+.news-section p {
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.8;
+  color: #8affff;
+  margin-bottom: 1.5rem;
+}
+
+.news-entry a {
+  font-size: 1.25rem;
+  color: #00ffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.news-entry a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+}
+
+.news-entry a:hover {
+  color: #ff00ff;
+}
+
+.news-entry a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #8affff;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.news-entry p {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.preview-img {
+  overflow: hidden;
+  border-radius: 20px;
+  width: 80%;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.5);
+  animation: fadeIn 1s ease;
+}
+
+.go-back-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.5);
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.go-back-button:hover {
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wiki1 {
+  color: #00ffff;
+  text-decoration: none;
+}

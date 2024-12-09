@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energi Radiasi dan Transfer Panas</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #1d1f27, #2a2d3b);
+      font-family: 'Orbitron', Arial, sans-serif;
+      color: #ffffff;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      padding: 2rem;
+    }
+
+    .calculator {
+      width: 90%;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      box-shadow: 0px 4px 20px rgba(0, 255, 255, 0.3);
+      text-align: center;
+    }
+
+    h1 {
+      color: #00ffff;
+      text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 80%;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    button {
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0px 4px 20px rgba(0, 255, 255, 0.5);
+      font-size: 1.2rem;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #ff00ff, #00ffff);
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      color: #8affff;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Energi Radiasi dan Transfer Panas</h1>
+    <p>Silahkan masukan temperature (K) dan area (m²):</p>
+
+    <input type="number" id="temperature" placeholder="Temperature (K)" />
+    <input type="number" id="area" placeholder="Area (m²)" />
+    <button onclick="calculateRadiationEuler()">Kalkulasi Energi</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    // Constants
+    const stefanBoltzmannConstant = 5.67e-8; // W/m²K⁴
+
+    // Function to calculate radiation using Euler's method
+    function calculateRadiationEuler() {
+      // Get inputs
+      const temperature = parseFloat(document.getElementById('temperature').value);
+      const area = parseFloat(document.getElementById('area').value);
+
+      // Validate inputs
+      if (isNaN(temperature) || isNaN(area) || temperature <= 0 || area <= 0) {
+        document.getElementById('result').textContent = "Please enter valid positive values for temperature and area.";
+        return;
+      }
+
+      // Parameters for Euler's method
+      const step = 1; // Increment for simulation (K)
+      const iterations = 10; // Number of steps to calculate
+      let currentTemperature = 0; // Start from 0K
+      let power = 0; // Initial power
+      let resultText = "";
+
+      // Euler's method to approximate Stefan-Boltzmann power calculation
+      for (let i = 0; i < iterations; i++) {
+        power += stefanBoltzmannConstant * area * Math.pow(currentTemperature, 4) * step;
+        currentTemperature += step;
+        resultText += `Step ${i + 1}: Temperature = ${currentTemperature} K, Energi Radiasi = ${power.toFixed(2)} W<br>`;
+
+        if (currentTemperature >= temperature) {
+          break; // Stop if we reach the desired temperature
+        }
+      }
+
+      // Display result
+      document.getElementById('result').innerHTML = resultText;
+    }
+  </script>
+</body>
+</html>
